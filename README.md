@@ -2,8 +2,10 @@
 
 Convert Markdown and GitHub Flavoured Markdown to Notion API Blocks and RichText.
 
-[![Node.js CI](https://github.com/tryfabric/martian/actions/workflows/ci.yml/badge.svg)](https://github.com/tryfabric/martian/actions/workflows/ci.yml)
+[![Node.js CI](https://github.com/thaim/martian/actions/workflows/ci.yml/badge.svg)](https://github.com/thaim/martian/actions/workflows/ci.yml)
 [![Code Style: Google](https://img.shields.io/badge/code%20style-google-blueviolet.svg)](https://github.com/google/gts)
+
+> **Note:** This is a fork of [tryfabric/martian](https://github.com/tryfabric/martian), maintained by [thaim](https://github.com/thaim).
 
 Martian is a Markdown parser to convert any Markdown content to Notion API block or RichText objects. It
 uses [unified](https://github.com/unifiedjs/unified) to create a Markdown AST, then converts the AST into Notion
@@ -36,9 +38,9 @@ The package exports two functions, which you can import like this:
 
 ```ts
 // JS
-const {markdownToBlocks, markdownToRichText} = require('@tryfabric/martian');
+const {markdownToBlocks, markdownToRichText} = require('@thaim/martian');
 // TS
-import {markdownToBlocks, markdownToRichText} from '@tryfabric/martian';
+import {markdownToBlocks, markdownToRichText} from '@thaim/martian';
 ```
 
 Here are couple of examples with both of them:
@@ -596,5 +598,3 @@ Error: Unsupported markdown element: {"type":"heading","depth":1,"children":[{"t
 ---
 
 Built with 💙 by the team behind [Fabric](https://tryfabric.com).
-
-<img src="https://static.scarf.sh/a.png?x-pxid=79ae4e0a-7e48-4965-8a83-808c009aa47a" />
