@@ -8,6 +8,9 @@ jobs:
   publish-npm:
     name: Publish on NPM
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write # Required for OIDC trusted publishing
+      contents: read
 
     steps:
       - uses: actions/checkout@v4
@@ -15,12 +18,15 @@ jobs:
       - name: Set up Node.js for NPM
         uses: actions/setup-node@v4
         with:
+          node-version: 22.x # OIDC trusted publishing requires Node >= 22.14.0
           registry-url: 'https://registry.npmjs.org'
 
+      # OIDC trusted publishing requires npm >= 11.5.1
+      - run: npm install -g npm@latest
       - run: npm ci
+      # Authentication is handled via OIDC (no NODE_AUTH_TOKEN).
+      # Provenance attestations are generated automatically.
       - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   publish-gpr:
     name: Publish on GPR

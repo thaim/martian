@@ -2,7 +2,10 @@
   "name": "@thaim/martian",
   "version": "2.0.0",
   "description": "Converts Markdown to Notion Blocks and RichText",
-  "repository": "https://github.com/thaim/martian",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thaim/martian.git"
+  },
   "bugs": "https://github.com/thaim/martian/issues",
   "homepage": "https://github.com/thaim/martian#readme",
   "main": "build/src/index.js",
