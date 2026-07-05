@@ -1,0 +1,23 @@
+# Release preparation via tagpr. Maintains a release PR that bumps the version
+# (package.json) and updates the changelog. Merging the release PR creates the
+# git tag and a published GitHub Release, which triggers release.yml (npm/GPR
+# publish). tagpr is the tool; this workflow only prepares the release, hence
+# the "Prepare Release" name rather than "Release".
+#
+# Requires conventional-pr.yml: the PR labels it applies drive tagpr's
+# version-bump detection and changelog grouping.
+name: Prepare Release
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [labeled, unlabeled]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  prepare-release:
+    uses: thaim/actions/.github/workflows/reusable-release.yml@4a149f95d26f73b47424ff7b4652bf70b548cac6 # v1.4.0
