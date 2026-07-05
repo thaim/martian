@@ -1,10 +1,15 @@
 {
-  "name": "@tryfabric/martian",
-  "version": "1.2.4",
+  "name": "@thaim/martian",
+  "version": "2.0.0",
   "description": "Converts Markdown to Notion Blocks and RichText",
-  "repository": "https://github.com/tryfabric/martian",
+  "repository": "https://github.com/thaim/martian",
+  "bugs": "https://github.com/thaim/martian/issues",
+  "homepage": "https://github.com/thaim/martian#readme",
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",
+  "files": [
+    "build/src"
+  ],
   "scripts": {
     "test": "jest",
     "lint": "gts lint",
@@ -25,8 +30,11 @@
   "engines": {
     "node": ">=20"
   },
-  "author": "Richard Robinson",
-  "license": "ISC",
+  "author": "thaim",
+  "contributors": [
+    "Richard Robinson"
+  ],
+  "license": "MIT",
   "dependencies": {
     "@notionhq/client": "^3.1.2",
     "remark-gfm": "^1.0.0",
